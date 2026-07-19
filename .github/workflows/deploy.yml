@@ -27,8 +27,8 @@ jobs:
 
       - name: Push and Apply Theme (Production / main)
         if: github.ref == 'refs/heads/main'
-        run: npx -p @bigcommerce/stencil-cli stencil push -a -c
+        run: npx -p @bigcommerce/stencil-cli stencil push -a -d
 
       - name: Push Theme as Draft (Development / dev)
         if: github.ref == 'refs/heads/dev'
-        run: npx -p @bigcommerce/stencil-cli stencil push -c
+        run: npx -p @bigcommerce/stencil-cli stencil push -d
