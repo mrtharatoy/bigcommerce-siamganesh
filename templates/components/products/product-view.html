@@ -158,78 +158,6 @@
             </div>
             {{product.detail_messages}}
             <dl class="productView-info">
-                <dt class="productView-info-name sku-label"{{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
-                <dd class="productView-info-value" data-product-sku>{{product.sku}}</dd>
-                <dt class="productView-info-name upc-label"{{#unless product.upc}} style="display: none;"{{/unless}}>{{lang 'products.upc'}}</dt>
-                <dd class="productView-info-value" data-product-upc>{{product.upc}}</dd>
-                {{#if product.condition}}
-                    <dt class="productView-info-name">{{lang 'products.condition'}}</dt>
-                    <dd class="productView-info-value">{{product.condition}}</dd>
-                {{/if}}
-                {{#if product.availability}}
-                    <dt class="productView-info-name">{{lang 'products.availability'}}</dt>
-                    <dd class="productView-info-value">{{product.availability}}</dd>
-                {{/if}}
-                {{#all product.weight theme_settings.show_product_weight}}
-                    <dt class="productView-info-name">{{lang 'products.weight'}}</dt>
-                    <dd class="productView-info-value" data-product-weight>{{product.weight}}</dd>
-                {{/all}}
-                {{#all product.width product.height product.depth theme_settings.show_product_dimensions}}
-                    <dt class="productView-info-name">{{lang 'products.width'}}</dt>
-                    <dd class="productView-info-value" data-product-width>
-                        {{product.width}}
-                        {{#if settings.measurements.length '==' 'Centimeters'}}
-                        ({{lang 'products.measurement.metric'}})
-                        {{else}}
-                        ({{lang 'products.measurement.imperial'}})
-                        {{/if}}
-                    </dd>
-                    <dt class="productView-info-name">{{lang 'products.height'}}</dt>
-                    <dd class="productView-info-value" data-product-height>
-                        {{product.height}}
-                        {{#if settings.measurements.length '==' 'Centimeters'}}
-                        ({{lang 'products.measurement.metric'}})
-                        {{else}}
-                        ({{lang 'products.measurement.imperial'}})
-                        {{/if}}
-                    </dd>
-                    <dt class="productView-info-name">{{lang 'products.depth'}}</dt>
-                    <dd class="productView-info-value" data-product-depth>
-                        {{product.depth}}
-                        {{#if settings.measurements.length '==' 'Centimeters'}}
-                        ({{lang 'products.measurement.metric'}})
-                        {{else}}
-                        ({{lang 'products.measurement.imperial'}})
-                        {{/if}}
-                    </dd>
-                {{/all}}
-                {{#if product.min_purchase_quantity}}
-                    <dt class="productView-info-name">{{lang 'products.min_purchase_quantity'}}</dt>
-                    <dd class="productView-info-value">{{lang 'products.purchase_units' quantity=product.min_purchase_quantity}}</dd>
-                {{/if}}
-                {{#if product.max_purchase_quantity}}
-                    <dt class="productView-info-name">{{lang 'products.max_purchase_quantity'}}</dt>
-                    <dd class="productView-info-value">{{lang 'products.purchase_units' quantity=product.max_purchase_quantity}}</dd>
-                {{/if}}
-                {{#if product.gift_wrapping_available}}
-                    <dt class="productView-info-name">{{lang 'products.gift_wrapping'}}</dt>
-                    <dd class="productView-info-value">{{lang 'products.gift_wrapping_available'}}</dd>
-                {{/if}}
-                {{#if product.shipping}}
-                    {{#if product.shipping.calculated}}
-                        <dt class="productView-info-name">{{lang 'products.shipping'}}</dt>
-                        <dd class="productView-info-value">{{lang 'products.shipping_calculated'}}</dd>
-                    {{else}}
-                        {{#if product.shipping.price.value '===' 0}}
-                            <dt class="productView-info-name">{{lang 'products.shipping'}}</dt>
-                            <dd class="productView-info-value">{{lang 'products.shipping_free'}}</dd>
-                        {{else}}
-                            <dt class="productView-info-name">{{lang 'products.shipping'}}</dt>
-                            <dd class="productView-info-value">{{lang 'products.shipping_fixed' amount=product.shipping.price.formatted}}</dd>
-                        {{/if}}
-                    {{/if}}
-                {{/if}}
-
                 {{#if settings.bulk_discount_enabled}}
                     <div class="productView-info-bulkPricing">
                         {{> components/products/bulk-discount-rates bulk_discount_rates=product.bulk_discount_rates}}
@@ -255,8 +183,8 @@
                 {{#if product.cart_order_source}}
                     <input type="hidden" name="cart_order_source" value="{{product.cart_order_source}}"/>
                 {{/if}}
-                <div data-product-option-change class="siam-puja-form" style="display:none; border: 1px solid #d32f2f; padding: 20px; border-radius: 5px; margin-bottom: 20px; background-color: #fff9f9;">
-                    <h3 style="color: #d32f2f; margin-top: 0;">ข้อมูลสำหรับฝากถวาย</h3>
+                <div data-product-option-change class="siam-puja-form" style="display:none; border: 2px solid #D4AF37; padding: 20px; border-radius: 8px; margin-bottom: 20px; background-color: #FCFBF9; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+                    <h3 style="color: #D35400; margin-top: 0; font-family: 'Lora', serif; border-bottom: 1px solid #D4AF37; padding-bottom: 10px; margin-bottom: 15px;">🙏 ข้อมูลสำหรับฝากถวาย</h3>
                     {{inject 'showSwatchNames' theme_settings.show_product_swatch_names}}
                     {{#each product.options}}
                         {{{dynamicComponent 'components/products/options'}}}
@@ -281,6 +209,15 @@
                     <ul class="productView-picklist-backorder" data-picklist-backorder-list style="display:none;"></ul>
                 </div>
                 {{> components/products/add-to-cart with_wallet_buttons=true}}
+                <!-- Trust Signals -->
+                <div class="trust-signals" style="text-align:center; margin-top:20px; padding-top:15px; border-top:1px dashed #e5e5e5;">
+                    <p style="font-size:12px; color:#2C3E50; margin-bottom:5px;"><strong>Secure Checkout Guaranteed</strong></p>
+                    <div style="display:flex; justify-content:center; gap:15px; margin-top:8px; color:#D35400; font-size: 13px; font-weight: 500;">
+                        <span>🔒 100% Secure</span>
+                        <span>✔️ Authentic Puja</span>
+                        <span>⭐ Global Trust</span>
+                    </div>
+                </div>
             </form>
             {{#if settings.show_wishlist}}
                 {{> components/common/wishlist-dropdown}}
