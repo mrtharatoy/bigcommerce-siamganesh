@@ -13,7 +13,7 @@ blog:
 ---
 {{#partial "hero"}}
     {{{region name="home_below_menu"}}}
-    {{#if carousel}}
+    {{#if carousel.slides.length}}
         {{> components/carousel carousel=carousel.slides}}
     {{else}}
         <div class="siam-hero" style="background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('{{cdn 'assets/img/siam-hero.jpg'}}') center/cover; padding: 100px 20px; text-align: center; color: #FCFBF9;">
@@ -24,7 +24,7 @@ blog:
     {{/if}}
 
     <div class="how-it-works" style="background-color: #FCFBF9; padding: 60px 20px; text-align: center; border-bottom: 1px solid #e5e5e5;">
-        <h2 style="color: #D35400; font-family: 'Lora', serif; margin-bottom: 40px;">How It Works / ขั้นตอนการฝากถวาย</h2>
+        <h2 style="color: #D35400; font-family: 'Lora', serif; margin-bottom: 40px;">How It Works</h2>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto;">
             <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #e5e5e5; border-radius: 8px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                 <h3 style="color: #2C3E50; margin-top:0;">1️⃣ Choose Puja</h3>
