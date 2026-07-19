@@ -13,10 +13,32 @@ blog:
 ---
 {{#partial "hero"}}
     {{{region name="home_below_menu"}}}
-    <div class="siam-hero" style="background: linear-gradient(rgba(211, 47, 47, 0.8), rgba(211, 47, 47, 0.9)), url('{{cdn 'assets/img/siam-hero.jpg'}}') center/cover; padding: 100px 20px; text-align: center; color: white;">
-        <h1 style="color: white; font-size: 3rem; margin-bottom: 20px;">Siam Ganesh Puja</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 30px;">Authentic spiritual offerings & blessings directly from Thailand.</p>
-        <a href="/categories/all" style="background: white; color: #d32f2f; padding: 15px 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; border-radius: 5px;">Book a Puja Now</a>
+    {{#if carousel}}
+        {{> components/carousel carousel=carousel.slides}}
+    {{else}}
+        <div class="siam-hero" style="background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('{{cdn 'assets/img/siam-hero.jpg'}}') center/cover; padding: 100px 20px; text-align: center; color: #FCFBF9;">
+            <h1 style="color: #D4AF37; font-size: 3rem; margin-bottom: 20px; font-family: 'Lora', serif;">Siam Ganesh Puja</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; font-weight: 300;">Authentic spiritual offerings & blessings directly from Thailand.</p>
+            <a href="/categories/all" style="background: #D35400; color: #FCFBF9; padding: 15px 30px; text-decoration: none; font-weight: 500; font-size: 1.1rem; border-radius: 5px; border: 1px solid #D4AF37; display: inline-block;">Book a Puja Now</a>
+        </div>
+    {{/if}}
+
+    <div class="how-it-works" style="background-color: #FCFBF9; padding: 60px 20px; text-align: center; border-bottom: 1px solid #e5e5e5;">
+        <h2 style="color: #D35400; font-family: 'Lora', serif; margin-bottom: 40px;">How It Works / ขั้นตอนการฝากถวาย</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto;">
+            <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #e5e5e5; border-radius: 8px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3 style="color: #2C3E50; margin-top:0;">1️⃣ Choose Puja</h3>
+                <p style="color: #666; font-size: 14px;">Select the deity and offering package that suits your wishes.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #e5e5e5; border-radius: 8px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3 style="color: #2C3E50; margin-top:0;">2️⃣ Make a Wish</h3>
+                <p style="color: #666; font-size: 14px;">Provide your name, birthdate, and personal prayer during checkout.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; padding: 20px; border: 1px solid #e5e5e5; border-radius: 8px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <h3 style="color: #2C3E50; margin-top:0;">3️⃣ Receive Blessings</h3>
+                <p style="color: #666; font-size: 14px;">Get photos of the ceremony and an official E-Certificate via email.</p>
+            </div>
+        </div>
     </div>
     {{{region name="home_below_carousel"}}}
 {{/partial}}
