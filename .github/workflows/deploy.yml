@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Initialize Stencil config
-        run: npx @bigcommerce/stencil-cli init -u ${{ secrets.BIGCOMMERCE_STORE_URL }} -t ${{ secrets.BIGCOMMERCE_ACCESS_TOKEN }}
+        run: npx @bigcommerce/stencil-cli init -u "${{ secrets.BIGCOMMERCE_STORE_URL }}" -t "${{ secrets.BIGCOMMERCE_ACCESS_TOKEN }}" -p 3000 -pm npm
 
       - name: Push and Apply Theme (Production / main)
         if: github.ref == 'refs/heads/main'
