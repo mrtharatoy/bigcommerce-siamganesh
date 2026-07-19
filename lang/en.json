@@ -1053,5 +1053,17 @@
     "privacy_policy": "Privacy Policy",
     "allow_category_tracking": "Allow [CATEGORY_NAME] tracking",
     "disallow_category_tracking": "Disallow [CATEGORY_NAME] tracking"
+  },
+  "optimized_checkout": {
+    "order_comments": {
+      "heading": "Make a Wish / คำอธิษฐาน (ระบุชื่อและวันเกิด)"
+    },
+    "payment": {
+      "order_comments_label": "Make a Wish / คำอธิษฐาน (ระบุชื่อและวันเกิด)",
+      "order_comments_placeholder": "Name, Birthdate, and your prayer... (ระบุชื่อ วันเกิด และเรื่องที่ต้องการฝากถวาย)"
+    },
+    "order_summary": {
+      "order_comments": "Make a Wish / คำอธิษฐาน"
+    }
   }
 }
