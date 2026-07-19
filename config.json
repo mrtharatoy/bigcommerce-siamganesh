@@ -257,7 +257,7 @@
     "pace-progress-backgroundColor": "#999999",
     "spinner-borderColor-dark": "#999999",
     "spinner-borderColor-light": "#ffffff",
-    "hide_content_navigation": true,
+    "hide_content_navigation": false,
     "optimizedCheckout-header-backgroundColor": "#FCFBF9",
     "optimizedCheckout-show-backgroundImage": false,
     "optimizedCheckout-backgroundImage": "",
@@ -405,7 +405,8 @@
     "amazon-button-color": "Gold",
     "masterpass-button-color": "black",
     "paymentbuttons-provider-sorting": [],
-    "footer-heading-fontColor": "#D4AF37"
+    "footer-heading-fontColor": "#D4AF37",
+    "navPages-backgroundColor": "transparent"
   },
   "read_only_files": [
     "/assets/scss/components/citadel",

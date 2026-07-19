@@ -13,15 +13,11 @@ blog:
 ---
 {{#partial "hero"}}
     {{{region name="home_below_menu"}}}
-    {{#if carousel.slides.length}}
-        {{> components/carousel carousel=carousel.slides}}
-    {{else}}
-        <div class="siam-hero" style="background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('{{cdn 'assets/img/siam-hero.jpg'}}') center/cover; padding: 100px 20px; text-align: center; color: #FCFBF9;">
-            <h1 style="color: #D4AF37; font-size: 3rem; margin-bottom: 20px; font-family: 'Lora', serif;">Siam Ganesh Puja</h1>
-            <p style="font-size: 1.2rem; margin-bottom: 30px; font-weight: 300;">Authentic spiritual offerings & blessings directly from Thailand.</p>
-            <a href="/categories/all" style="background: #D35400; color: #FCFBF9; padding: 15px 30px; text-decoration: none; font-weight: 500; font-size: 1.1rem; border-radius: 5px; border: 1px solid #D4AF37; display: inline-block;">Book a Puja Now</a>
-        </div>
-    {{/if}}
+    <div class="siam-hero" style="background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('{{cdn 'assets/img/siam-hero.jpg'}}') center/cover; padding: 100px 20px; text-align: center; color: #FCFBF9;">
+    <h1 style="color: #D4AF37; font-size: 3rem; margin-bottom: 20px; font-family: 'Lora', serif;">Siam Ganesh Puja</h1>
+    <p style="font-size: 1.2rem; margin-bottom: 30px; font-weight: 300;">Authentic spiritual offerings & blessings directly from Thailand.</p>
+    <a href="/categories/all" style="background: #D35400; color: #FCFBF9; padding: 15px 30px; text-decoration: none; font-weight: 500; font-size: 1.1rem; border-radius: 5px; border: 1px solid #D4AF37; display: inline-block;">Book a Puja Now</a>
+</div>
 
     <div class="how-it-works" style="background-color: #FCFBF9; padding: 60px 20px; text-align: center; border-bottom: 1px solid #e5e5e5;">
         <h2 style="color: #D35400; font-family: 'Lora', serif; margin-bottom: 40px;">How It Works</h2>
