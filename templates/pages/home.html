@@ -1,0 +1,47 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+    {{{region name="home_below_menu"}}}
+    <div class="siam-hero" style="background: linear-gradient(rgba(211, 47, 47, 0.8), rgba(211, 47, 47, 0.9)), url('{{cdn 'assets/img/siam-hero.jpg'}}') center/cover; padding: 100px 20px; text-align: center; color: white;">
+        <h1 style="color: white; font-size: 3rem; margin-bottom: 20px;">Siam Ganesh Puja</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">Authentic spiritual offerings & blessings directly from Thailand.</p>
+        <a href="/categories/all" style="background: white; color: #d32f2f; padding: 15px 30px; text-decoration: none; font-weight: bold; font-size: 1.1rem; border-radius: 5px;">Book a Puja Now</a>
+    </div>
+    {{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+    {{#each shipping_messages}}
+        {{> components/common/alert/alert-info message}}
+    {{/each}}
+
+<div class="main full">
+    {{#if products.featured}}
+        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+    {{/if}}
+    {{{region name="home_below_featured_products"}}}
+
+    {{#if products.top_sellers}}
+        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+    {{/if}}
+    {{{region name="home_below_top_products"}}}
+
+    {{#if products.new}}
+        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    {{/if}}
+    {{{region name="home_below_new_products"}}}
+</div>
+{{/partial}}
+{{> layout/base}}

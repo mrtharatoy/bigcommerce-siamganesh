@@ -1,0 +1,28 @@
+name: Deploy to BigCommerce
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm install
+
+      - name: Initialize Stencil config
+        run: npx @bigcommerce/stencil-cli init -u ${{ secrets.BIGCOMMERCE_STORE_URL }} -t ${{ secrets.BIGCOMMERCE_ACCESS_TOKEN }}
+
+      - name: Push Theme to BigCommerce
+        run: npx @bigcommerce/stencil-cli push -a

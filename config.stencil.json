@@ -1,0 +1,12 @@
+{
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  },
+  "normalStoreUrl": "https://store-loiianicvy.mybigcommerce.com",
+  "port": 3000,
+  "clientId": "ad3xf3ac9goq5zsu07qa3qdsh73wslb",
+  "packageManager": "npm"
+}
